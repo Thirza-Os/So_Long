@@ -44,18 +44,20 @@ int	check_ber(char *argv)
 
 	len = ft_strlen(argv);
 	if (len == 0 || ft_strncmp(&argv[len - 4], ".ber", 4) != 0)
-	{
-		ft_printf("Error\n");
-		exit(1);
-	}
+		print_error("No .ber file!");
 	return (0);
 }
 
 void	new_window(t_program *program, int width, int height, char *name)
 {
 	program->window = mlx_new_window(program->mlx, width, height, name);
-	program->program_size = ft_malloc_check((t_vector *) \
-		malloc(sizeof(t_vector)));
 	program->program_size->width = width;
 	program->program_size->height = height;
+}
+
+void	print_error(char *message)
+{
+	ft_printf("Error\n");
+	ft_printf("%s\n", message);
+	exit (1);
 }

@@ -1,17 +1,31 @@
 #include "so_long.h"
 
-void count_collectables(t_program *program, char *map_array)
+void	count_collectables(t_program *program, char *map_array)
 {
 	int	i;
+	int	count_exit;
+	int	count_start;
 
 	i = 0;
+	count_exit = 0;
+	count_start = 0;
 	program->max_collectables = 0;
 	while (map_array[i])
 	{
 		if (map_array[i] == 'C')
-			program->max_collectables++;
+			program->max_collectables += 1;
+		if (map_array[i] == 'E')
+			count_exit++;
+		if (map_array[i] == 'P')
+			count_start++;
+		if (map_array[i] != '0' && map_array[i] != '1' && \
+			map_array[i] != 'E' && map_array[i] != 'C' && \
+			map_array[i] != 'P' && map_array[i] != '\n')
+			print_error("Unknown element!");
 		i++;
 	}
+	if (count_exit < 1 || count_start < 1 || program->max_collectables < 1)
+		print_error("Not enough elements!");
 }
 
 void	get_xy(t_program *program)
@@ -35,19 +49,20 @@ void	parse_map(char *argv, t_program *program)
 
 	fd = (open(argv, O_RDONLY));
 	if (fd < 0)
-		ft_printf("Error\n File opening failed.\n");
+		print_error("File opening failed.");
 	map_array = NULL;
 	i = 0;
-	while ((line = get_next_line(fd)))
+	line = get_next_line(fd);
+	while (line != NULL)
 	{
 		map_array = ft_strjoin_free_so_long(map_array, line);
 		line = NULL;
 		i++;
+		line = get_next_line(fd);
 	}
 	free(line);
 	close(fd);
 	count_collectables(program, map_array);
-	program->grid = (char **)malloc(sizeof(char *));
 	program->grid = ft_split(map_array, '\n');
 	free(map_array);
 	get_xy(program);

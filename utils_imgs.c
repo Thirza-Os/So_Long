@@ -11,8 +11,11 @@ static void	init_img(t_program *program, t_img **img, char *path)
 void	load_imgs(t_program *program)
 {
 	init_img(program, &program->player, "./imgs/block_player_one.xpm");
+	init_img(program, &program->player_copy, "./imgs/block_player_one.xpm");
+	init_img(program, &program->player_two, "./imgs/block_player_two.xpm");
 	init_img(program, &program->exit, "./imgs/block_end.xpm");
 	init_img(program, &program->wall, "./imgs/wall.xpm");
 	init_img(program, &program->ground, "./imgs/empty_space.xpm");
 	init_img(program, &program->dave, "./imgs/block_enemy.xpm");
+	init_img(program, &program->collectable, "./imgs/fish.xpm");
 }

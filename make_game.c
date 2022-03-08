@@ -4,13 +4,11 @@ void	intit_playground(t_program *program, int y_count, int x_count)
 {
 	if (program->grid[y_count][x_count] == 'P')
 	{
-		program->player_position = ft_malloc_check(malloc(sizeof(t_vector)));
 		mlx_put_image_to_window(program->mlx, program->window, \
 			program->ground->img_pointer, x_count * 80, y_count * 80);
 			program->player_position->height = y_count;
 			program->player_position->width = x_count;
 			program->grid[y_count][x_count] = '0';
-			// ft_printf("x: %d\n y: %d", program->player_position->width, program->player_position->height);
 	}
 	if (program->grid[y_count][x_count] == '1')
 		mlx_put_image_to_window(program->mlx, program->window, \
@@ -24,7 +22,7 @@ void	intit_playground(t_program *program, int y_count, int x_count)
 	if (program->grid[y_count][x_count] == 'C')
 	{
 		mlx_put_image_to_window(program->mlx, program->window, \
-			program->dave->img_pointer, x_count * 80, y_count * 80);
+			program->collectable->img_pointer, x_count * 80, y_count * 80);
 	}
 }
 

@@ -42,6 +42,9 @@ typedef struct s_program
 	t_vector	*max_xy;
 	t_vector	*player_position;
 	t_img		*player;
+	t_img		*player_copy;
+	t_img		*player_two;
+	t_img		*collectable;
 	t_img		*exit;
 	t_img		*wall;
 	t_img		*ground;
@@ -55,6 +58,8 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 void			*ft_memchr(const void *s, int c, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
 
+void			validate_map(t_program *param);
+void			print_error(char *message);
 int				check_ber(char *argv);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 void			new_window(t_program *program, int width, \
@@ -68,5 +73,9 @@ void			make_game(t_program *program);
 int				check_ber(char *argv);
 void			put_player(t_program *program);
 void			intit_playground(t_program *program, int y_count, int x_count);
-
+void			right_move(t_program *program);
+void			left_move(t_program *program);
+void			down_move(t_program *program);
+void			up_move(t_program *program);
+int				check_position(int y, int x, t_program *program);
 #endif

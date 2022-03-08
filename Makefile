@@ -1,13 +1,15 @@
 NAME 	= 	so_long
 
 SRCS 	= 	so_long.c 				\
+			validate_map.c			\
 			utils.c					\
 			utils_fileread.c		\
 			utils_imgs.c			\
 			get_next_line.c			\
 			get_next_line_utils.c	\
 			make_game.c				\
-			game_play.c
+			game_play.c				\
+			player_moves.c
 
 LIB				= ./libft/libft.a
 LIBFT_LOC		= libft
@@ -18,7 +20,7 @@ PRINTF_FLAGS	= -Llibftprintf -lftprintf
 MLX_LOC			= mlx
 MLX_LIB			= mlx/libmlx.a
 MLX_FLAGS		= -Lmlx -lmlx -framework OpenGL -framework AppKit	
-CFLAGS 			= -Wall -Wextra -Werror -fsanitize=address -g1
+CFLAGS 			= -Wall -Wextra -Werror -g
 CC				= gcc
 HEADER 			= so_long.h
 
