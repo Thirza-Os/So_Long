@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   so_long.h                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: tosinga <tosinga@student.42.fr>              +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/03/08 15:03:19 by tosinga       #+#    #+#                 */
+/*   Updated: 2022/03/08 15:03:20 by tosinga       ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -38,9 +50,9 @@ typedef struct s_program
 	int			max_collectables;
 	int			counter_collectables;
 	int			key_presses;
+	t_vector	player_position;
 	t_vector	*program_size;
 	t_vector	*max_xy;
-	t_vector	*player_position;
 	t_img		*player;
 	t_img		*player_copy;
 	t_img		*player_two;
@@ -72,10 +84,12 @@ void			get_xy(t_program *program);
 void			make_game(t_program *program);
 int				check_ber(char *argv);
 void			put_player(t_program *program);
-void			intit_playground(t_program *program, int y_count, int x_count);
+void			init_playground(t_program *program, int y_count, int x_count);
 void			right_move(t_program *program);
 void			left_move(t_program *program);
 void			down_move(t_program *program);
 void			up_move(t_program *program);
 int				check_position(int y, int x, t_program *program);
+int				display_score(t_program *program);
+
 #endif

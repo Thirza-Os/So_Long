@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         ::::::::             #
+#    Makefile                                           :+:    :+:             #
+#                                                      +:+                     #
+#    By: tosinga <tosinga@student.42.fr>              +#+                      #
+#                                                    +#+                       #
+#    Created: 2022/03/08 15:03:10 by tosinga       #+#    #+#                  #
+#    Updated: 2022/03/08 15:03:11 by tosinga       ########   odam.nl          #
+#                                                                              #
+# **************************************************************************** #
+
 NAME 	= 	so_long
 
 SRCS 	= 	so_long.c 				\
@@ -20,7 +32,7 @@ PRINTF_FLAGS	= -Llibftprintf -lftprintf
 MLX_LOC			= mlx
 MLX_LIB			= mlx/libmlx.a
 MLX_FLAGS		= -Lmlx -lmlx -framework OpenGL -framework AppKit	
-CFLAGS 			= -Wall -Wextra -Werror -g
+CFLAGS 			= -Wall -Wextra -Werror
 CC				= gcc
 HEADER 			= so_long.h
 

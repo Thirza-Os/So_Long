@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   utils.c                                            :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: tosinga <tosinga@student.42.fr>              +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/03/08 15:03:29 by tosinga       #+#    #+#                 */
+/*   Updated: 2022/03/08 15:03:30 by tosinga       ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	*ft_malloc_check(void *s)
@@ -16,7 +28,7 @@ char	*ft_strjoin_free_so_long(char const *s1, char const *s2)
 	size_t	a;
 	size_t	b;
 
-	str = (char *)malloc(ft_strlen(s1) + (ft_strlen(s2)) + 1);
+	str = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (str == NULL)
 	{
 		free ((char *)s1);
