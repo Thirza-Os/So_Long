@@ -4,4 +4,4 @@ Status: In evaluation
 
 Finished Result:
 
-My implementation of a program capable of reading single lines, one by one, from a given file descriptor.
+My implementation of a 2D game.
