@@ -6,7 +6,7 @@
 /*   By: tosinga <tosinga@student.42.fr>              +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/03/08 15:03:23 by tosinga       #+#    #+#                 */
-/*   Updated: 2022/03/08 15:03:24 by tosinga       ########   odam.nl         */
+/*   Updated: 2022/03/09 12:24:59 by tosinga       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	count_collectables(t_program *program, char *map_array)
 	i = 0;
 	count_exit = 0;
 	count_start = 0;
-	get_xy(program);
 	program->max_collectables = 0;
 	while (map_array[i])
 	{
@@ -60,7 +59,7 @@ void	count_collectables(t_program *program, char *map_array)
 		print_error("Not enough elements!");
 }
 
-void	parse_map(char *argv, t_program *program)
+static void	*get_lines(char *argv)
 {
 	char	*line;
 	char	*map_array;
@@ -84,7 +83,16 @@ void	parse_map(char *argv, t_program *program)
 	}
 	free(line);
 	close(fd);
+	return (map_array);
+}
+
+void	parse_map(char *argv, t_program *program)
+{
+	char	*map_array;
+
+	map_array = get_lines(argv);
 	count_collectables(program, map_array);
 	program->grid = ft_split(map_array, '\n');
+	get_xy(program);
 	free(map_array);
 }
