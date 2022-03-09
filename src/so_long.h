@@ -17,9 +17,9 @@
 #  define BUFFER_SIZE 1
 # endif
 
-# include "./mlx/mlx.h"
-# include "./libftprintf/libftprintf.h"
-# include "./libft/libft.h"
+# include "../mlx/mlx.h"
+# include "../libftprintf/libftprintf.h"
+# include "../libft/libft.h"
 # include <unistd.h>
 # include <stdio.h>
 # include <fcntl.h>

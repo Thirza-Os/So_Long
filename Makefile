@@ -12,16 +12,16 @@
 
 NAME 	= 	so_long
 
-SRCS 	= 	so_long.c 				\
-			validate_map.c			\
-			utils.c					\
-			utils_fileread.c		\
-			utils_imgs.c			\
-			get_next_line.c			\
-			get_next_line_utils.c	\
-			make_game.c				\
-			game_play.c				\
-			player_moves.c
+SRCS 	= 	src/so_long.c 				\
+			src/validate_map.c			\
+			src/utils.c					\
+			src/utils_fileread.c		\
+			src/utils_imgs.c			\
+			src/get_next_line.c			\
+			src/get_next_line_utils.c	\
+			src/make_game.c				\
+			src/game_play.c				\
+			src/player_moves.c
 
 LIB				= ./libft/libft.a
 LIBFT_LOC		= libft
@@ -32,9 +32,9 @@ PRINTF_FLAGS	= -Llibftprintf -lftprintf
 MLX_LOC			= mlx
 MLX_LIB			= mlx/libmlx.a
 MLX_FLAGS		= -Lmlx -lmlx -framework OpenGL -framework AppKit	
-CFLAGS 			= -Wall -Wextra -Werror
+CFLAGS 			= -Wall -Wextra
 CC				= gcc
-HEADER 			= so_long.h
+HEADER 			= src/so_long.h
 
 OBJECTS = $(SRCS:.c=.o)
 
